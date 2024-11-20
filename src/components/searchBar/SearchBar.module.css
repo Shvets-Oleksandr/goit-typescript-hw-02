@@ -1,0 +1,46 @@
+.searchBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  width: 100%;
+  padding: 5px 0px;
+  background-image: linear-gradient(200deg, pink, blue);
+  box-shadow: 0 4px 8px 2px rgba(0, 0, 0, 0.3);
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+.formBtn {
+  display: flex;
+  align-items: center;
+  height: 25px;
+  color: rgb(86, 86, 86);
+  cursor: pointer;
+  border: none;
+  background-color: white;
+  border-radius: 3px 0 0 3px;
+}
+
+.formBtn:hover,
+.formBtn.focus {
+  color: black;
+}
+
+.input {
+  box-sizing: border-box;
+  height: 25px;
+  border: none;
+  border-radius: 0 3px 3px 0;
+}
+
+.input:hover,
+.input:focus {
+  outline: transparent;
+}

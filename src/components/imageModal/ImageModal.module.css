@@ -1,0 +1,69 @@
+.modal {
+  max-width: 90%;
+  max-height: 90%;
+  position: absolute;
+  outline: transparent;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 11;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.ImageModalInfo {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: -100%;
+  color: aliceblue;
+  font-size: larger;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 5px;
+  padding-right: 5px;
+  background-image: linear-gradient(
+    200deg,
+    rgba(255, 192, 203, 0.4),
+    rgba(0, 0, 255, 0.3)
+  );
+  transition: bottom 0.5s ease;
+}
+
+.modal:hover .ImageModalInfo {
+  bottom: 0;
+}
+
+.image {
+  min-width: 100%;
+  display: block;
+}
+
+.autorInfo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.likes {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.autorImg {
+  display: block;
+  border-radius: 50%;
+}

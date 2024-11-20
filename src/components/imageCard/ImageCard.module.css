@@ -1,0 +1,8 @@
+.galleryCard {
+  cursor: zoom-in;
+  transition: transform 300ms ease-in;
+}
+
+.galleryCard:hover {
+  transform: scale(1.02, 1.02);
+}

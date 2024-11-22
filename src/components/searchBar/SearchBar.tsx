@@ -1,18 +1,28 @@
-import css from './SearchBar.module.css';
+import { FormEvent } from 'react';
 
 import toast, { Toaster } from 'react-hot-toast';
 import { IoSearch } from 'react-icons/io5';
 
-const SearchBar = ({ onSubmit }) => {
-  const handleSubmit = event => {
+import css from './SearchBar.module.css';
+
+type SearchBarProps = {
+  onSubmit: (inputValue: string) => Promise<void>
+};
+
+const SearchBar = ({ onSubmit }: SearchBarProps) => {
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const inputValue = event.target.elements.searchInput.value.trim();
+
+    const form = event.currentTarget;
+    const inputElement = form.elements.namedItem('searchInput') as HTMLInputElement;
+
+    const inputValue = inputElement?.value.trim();
     if (inputValue === '') {
       toast.error('Please enter search term!');
       return;
     }
     onSubmit(inputValue);
-    event.target.reset();
+    form.reset();
   };
   return (
     <header className={css.searchBar}>

@@ -1,6 +1,20 @@
 import css from './ImageCard.module.css';
 
-const ImageCard = ({ img, onImageClick }) => {
+interface Image {
+  id: string;
+  alt_description?: string;
+  urls: {
+    small: string;
+    full: string;
+  };
+}
+
+interface ImageCardProps {
+  img: Image;
+  onImageClick: (img: Image) => void;
+}
+
+const ImageCard = ({ img, onImageClick }: ImageCardProps) => {
   return (
     <div className={css.galleryCard}>
       <img

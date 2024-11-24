@@ -4,7 +4,7 @@ axios.defaults.baseURL = 'https://api.unsplash.com/search/photos';
 
 interface UnsplashImage {
   id: string;
-  alt_description: string;
+  alt_description?: string;
   urls: {
     small: string,
     full: string,

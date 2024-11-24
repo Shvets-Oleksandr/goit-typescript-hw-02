@@ -20,7 +20,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImg, setSelectedImg] = useState(null);
 
   useEffect(() => {
     if (!query) return;
@@ -64,14 +64,14 @@ function App() {
     setPage(prevPage => prevPage + 1);
   };
 
-  const openModal = image => {
-    setSelectedImage(image);
+  const openModal = img => {
+    setSelectedImg(img);
     setIsModalOpen(true);
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
-    setSelectedImage(null);
+    setSelectedImg(null);
   };
 
   return (
@@ -86,15 +86,15 @@ function App() {
       {page < totalPages && !isLoading && (
         <LoadMoreBtn handleClick={handleClick} />
       )}
-      {selectedImage && (
+      {selectedImg && (
         <ImageModal
           isOpen={isModalOpen}
           onRequestClose={closeModal}
-          imageUrl={selectedImage.urls.regular}
-          alt={selectedImage.alt_description}
-          likes={selectedImage.likes}
-          autor={selectedImage.user.first_name}
-          autorImg={selectedImage.user.profile_image.large}
+          imageUrl={selectedImg.urls.regular}
+          alt={selectedImg.alt_description}
+          likes={selectedImg.likes}
+          autor={selectedImg.user.first_name}
+          autorImg={selectedImg.user.profile_image.large}
         />
       )}
     </div>

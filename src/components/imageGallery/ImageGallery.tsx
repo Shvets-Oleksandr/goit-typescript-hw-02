@@ -2,7 +2,21 @@ import ImageCard from '../imageCard/ImageCard';
 
 import css from './ImageGallery.module.css';
 
-const ImageGallery = ({ imgs, onImageClick }) => {
+interface Image {
+  id: string;
+  alt_description?: string;
+  urls: {
+    small: string;
+    full: string;
+  };
+}
+
+interface ImageGalleryProps {
+  imgs: Image[] | null;
+  onImageClick: (img: Image) => void;
+}
+
+const ImageGallery = ({ imgs, onImageClick }: ImageGalleryProps) => {
   return (
     <section className={css.gellaryContainer}>
       <ul className={css.list}>

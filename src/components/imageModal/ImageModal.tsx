@@ -5,6 +5,16 @@ import css from './ImageModal.module.css';
 
 ReactModal.setAppElement('#root');
 
+interface ImageModalProps {
+  isOpen: boolean;
+  onRequestClose: () => void;
+  imageUrl: string;
+  alt: string;
+  likes: number;
+  autor: string;
+  autorImg: string;
+}
+
 const ImageModal = ({
   isOpen,
   onRequestClose,
@@ -13,7 +23,7 @@ const ImageModal = ({
   likes,
   autor,
   autorImg,
-}) => (
+}:ImageModalProps) => (
   <ReactModal
     isOpen={isOpen}
     onRequestClose={onRequestClose}

@@ -35,13 +35,13 @@ function App() {
   total_pages: number;
 }
   
-  const [query, setQuery] = useState < string > ('');
+  const [query, setQuery] = useState <string> ('');
   const [imgs, setImgs] = useState<Image [] | null>(null);
-  const [page, setPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(0);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [page, setPage] = useState<number>(1);
+  const [totalPages, setTotalPages] = useState<number>(0);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [error, setError] = useState<boolean>(false);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [selectedImg, setSelectedImg] = useState<Image | null >(null);
 
   useEffect(() => {

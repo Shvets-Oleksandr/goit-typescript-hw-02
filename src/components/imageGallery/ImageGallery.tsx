@@ -7,7 +7,14 @@ interface Image {
   alt_description?: string;
   urls: {
     small: string;
-    full: string;
+    regular: string;
+  };
+  likes: number;
+  user: {
+    first_name: string;
+    profile_image: {
+      large: string;
+    };
   };
 }
 

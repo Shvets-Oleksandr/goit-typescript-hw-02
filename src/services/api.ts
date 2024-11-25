@@ -3,11 +3,18 @@ import axios, { AxiosResponse } from 'axios';
 axios.defaults.baseURL = 'https://api.unsplash.com/search/photos';
 
 interface UnsplashImage {
-  id: string;
+ id: string;
   alt_description?: string;
   urls: {
-    small: string,
-    full: string,
+    small: string;
+    regular: string;
+  };
+  likes: number;
+  user: {
+    first_name: string;
+    profile_image: {
+      large: string;
+    };
   };
 }
 
